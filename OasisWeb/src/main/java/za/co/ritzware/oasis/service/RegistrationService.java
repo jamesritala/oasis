@@ -1,14 +1,14 @@
 package za.co.ritzware.oasis.service;
 
-import za.co.ritzware.oasis.dao.ApplyDAO;
-import za.co.ritzware.oasis.model.Application;
+import za.co.ritzware.oasis.dao.RegisterDAO;
+import za.co.ritzware.oasis.model.RegistrationBean;
 
-public class ApplicationService {
+public class RegistrationService {
 
-	public static String apply(Application application) {
+	public static String apply(RegistrationBean application) {
 		
 		if(!hasAppliedBefore(application.getId())) {
-			ApplyDAO applicationDAO= new ApplyDAO();
+			RegisterDAO applicationDAO= new RegisterDAO();
 			return applicationDAO.saveApplication(application);
 		}
 		return null;
