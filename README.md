@@ -10,7 +10,7 @@ The word **Oasis** means a fertile spot in a desert, where water is found.
 
 In relation to this project the name refers to a solution that is supposed to help people find exactly what they are looking for with little effort on their own. They should express intent and the 'system' should give them what they want.
 
-Having being in a situation where I was looking for an apartment, and having known a couple of friends who were all experiencing the same challenges when it comes to finding a place to stay.
+Having being in a situation where I was looking for an apartment, and having known a couple of friends who were all experiencing the same challenges when it comes to finding a place to stay, I decided to build a system that solves these challenges.
 
  
 
