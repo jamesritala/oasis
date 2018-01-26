@@ -6,6 +6,7 @@ import za.co.ritzware.oasis.dao.RegisterDAO;
 import za.co.ritzware.oasis.model.RegistrationBean;
 
 public class RegisterDAOJDBC implements RegisterDAO {
+	private static String SAVE_QUERY="insert into Application(";
 	/* (non-Javadoc)
 	 * @see za.co.ritzware.oasis.dao.jdbc.RegisterDAO#save(za.co.ritzware.oasis.model.RegistrationBean)
 	 */
