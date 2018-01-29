@@ -6,15 +6,16 @@ import java.util.List;
 import za.co.ritzware.oasis.dao.RegisterDAO;
 import za.co.ritzware.oasis.model.RegistrationBean;
 import za.co.ritzware.oasis.utils.DatabaseUtilities;
+import za.co.ritzware.oasis.utils.GenericUtilities;
 
 public class RegisterDAOJDBC implements RegisterDAO {
-	private static String SAVE_QUERY="INSERT INTO application(firstname,lastname,natid,gender,dob,maritalstatus,cellnumber,email,occupation,companyname,income,empperiod,workphone,incometaxnumber,methodofcontact,typeofplace,lengthofstay)";
+	private static String SAVE_QUERY="INSERT INTO application(firstname,lastname,natid,gender,dob,maritalstatus,cellnumber,email,occupation,companyname,income,empperiod,workphone,incometaxnumber,methodofcontact,typeofplace,lengthofstay,refnumber)";
 	/* (non-Javadoc)
 	 * @see za.co.ritzware.oasis.dao.jdbc.RegisterDAO#save(za.co.ritzware.oasis.model.RegistrationBean)
 	 */
 	@Override
 	public String save(RegistrationBean application) {
-		String refNum="";
+		String refNum=GenericUtilities.generateUniqueRefNumber();
 		SAVE_QUERY = SAVE_QUERY + " VALUES (";
 		
 		SAVE_QUERY = SAVE_QUERY + "'"+ application.getFirstName()+"','"+ application.getLastName()+"','"
@@ -22,7 +23,7 @@ public class RegisterDAOJDBC implements RegisterDAO {
 				+application.getMaritalStatus()+"','"+ application.getCellNumber()+"','"+application.getEmail()+"','"
 				+application.getOccupation()+"','"+application.getCompanyName()+"',"+application.getMonthlyIncome()+",'"
 				+ application.getEmploymentPeriod()+"','"+ application.getWorkPhone()+"','"+application.getIncomeTaxNumber()+"','"
-				+ application.getMethodOfContact()+"','"+ application.getTypeOfPlace()+"','"+application.getLengthOfStay()+"')";
+				+ application.getMethodOfContact()+"','"+ application.getTypeOfPlace()+"','"+application.getLengthOfStay()+ "','"+ refNum +"')";
 		ResultSet rs= DatabaseUtilities.executeQuery(SAVE_QUERY);
 	     if(rs!=null) {
 	    	  //TODO
