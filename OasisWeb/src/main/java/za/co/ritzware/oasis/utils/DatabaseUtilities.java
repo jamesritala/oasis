@@ -37,12 +37,13 @@ public class DatabaseUtilities {
 
 	public static ResultSet executeQuery(String query) {
 		Statement stmt;
-		ResultSet rs;
+		ResultSet rs=null;
 		Connection conn = getConnection();
 		try {
 			if (conn != null && !conn.isClosed()) {
 				stmt = getConnection().createStatement();
-				rs = stmt.executeQuery(query);
+				if(stmt.execute(query))
+					rs = stmt.getResultSet();
 				return rs;
 			}
 		} catch (SQLException e) {
