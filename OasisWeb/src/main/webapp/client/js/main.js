@@ -80,7 +80,7 @@ function addApplication() {
 
                                                 alert('Application created successfully');
                    
-                                                $('#ApplicationId').val(data.id);
+                                               // $('#ApplicationId').val(data.id);
 
                                 },
 
