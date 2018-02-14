@@ -76,15 +76,8 @@ function addApplication() {
 
                                 data: formToJSON(),
 
-                                success: alert('Application created successfully')
-                   
-                                               // $('#ApplicationId').val(data.id);
-
-                                ,
-
-                                error: "failed"
-
-                                
+                                success: redirectSuccess(data.refNum),
+                                error: redirectFailure()
 
                 });
 
@@ -119,4 +112,12 @@ function formToJSON() {
 
                                 
 
+}
+
+function redirectSuccess(){
+	window.location.href="success.jsp";
+}
+
+function redirectFailure(){
+	window.location.href="failure.html";
 }

@@ -13,7 +13,7 @@ import za.co.ritzware.oasis.service.RegistrationService;
 @Path("/")
 public class OasisRegistrationWS {
 	@PUT
-	@Produces(MediaType.TEXT_HTML)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("apply")
 	public Response apply(RegistrationBean application) {
@@ -25,6 +25,6 @@ public class OasisRegistrationWS {
 					e.printStackTrace();
 		}
 		
-		return Response.status(200).entity(refNum).build();
+		return Response.status(200).entity("{\"refNum\" :\""+ refNum +"\"}").build();
 	}
 }
