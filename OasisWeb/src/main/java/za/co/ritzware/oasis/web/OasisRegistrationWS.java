@@ -22,10 +22,9 @@ public class OasisRegistrationWS {
 		try {
 			refNum = RegistrationService.apply(application);
 		} catch (Exception e) {
-
+					e.printStackTrace();
 		}
-		String output = "<h1>Application successful!<h1>" + "<p>Ref num: ... <br>Ping @ " + refNum
-				+ "</p<br>";
-		return Response.status(200).entity(output).build();
+		
+		return Response.status(200).entity(refNum).build();
 	}
 }

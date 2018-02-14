@@ -2,6 +2,7 @@ package za.co.ritzware.oasis.dao.jdbc;
 
 import java.sql.Date;
 import java.sql.ResultSet;
+import java.util.Calendar;
 import java.util.List;
  
 import za.co.ritzware.oasis.dao.RegisterDAO;
@@ -23,7 +24,8 @@ public class RegisterDAOJDBC implements RegisterDAO {
 		try {
 			sqlDate=new Date(application.getDateOfBirth().getTime());
 		}catch(Exception e ) {
-			
+			sqlDate= new Date(Calendar.getInstance().getTimeInMillis());
+			e.printStackTrace();
 		}
 		
 		SAVE_QUERY = SAVE_QUERY + "'"+ application.getFirstName()+"','"+ application.getLastName()+"','"

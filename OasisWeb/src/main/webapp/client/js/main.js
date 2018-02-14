@@ -1,6 +1,6 @@
 // The root URL for the RESTful services
 
-var rootURL = "http://localhost:8080/OasisWeb/rest//apply";
+var rootURL = "http://localhost:8080/OasisWeb/rest/apply/";
 
 var currentApplication;
 
@@ -19,7 +19,7 @@ function findByName(searchKey) {
 
                 $.ajax({
 
-                                type: 'GET',
+                                type: 'PUT',
 
                                 url: rootURL + '/search/' + searchKey,
 
@@ -66,7 +66,7 @@ function addApplication() {
 
                 $.ajax({
 
-                                type: 'POST',
+                                type: 'PUT',
 
                                 contentType: 'application/json',
 
@@ -76,19 +76,15 @@ function addApplication() {
 
                                 data: formToJSON(),
 
-                                success: function(data, textStatus, jqXHR){
-
-                                                alert('Application created successfully');
+                                success: alert('Application created successfully')
                    
                                                // $('#ApplicationId').val(data.id);
 
-                                },
+                                ,
 
-                                error: function(jqXHR, textStatus, errorThrown){
+                                error: "failed"
 
-                                                alert('addApplication error: ' + textStatus);
-
-                                }
+                                
 
                 });
 
@@ -113,7 +109,7 @@ function formToJSON() {
                                 "companyName": $('#companyName').val(),
                                 "monthlyIncome": $('#monthlyIncome').val(),
                                 "employmentPeriod": $('#employmentPeriod').val(),
-                                "workPhone": $('#workPhone').val()1,
+                                "workPhone": $('#workPhone').val(),
                                 "incomeTaxNumber": $('#incomeTaxNumber').val(),
                                 "methodOfContact": $('#methodOfContact').val(),
                                 "typeOfPlace": $('#typeOfPlace').val() ,
