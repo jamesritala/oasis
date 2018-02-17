@@ -15,7 +15,7 @@ $('#btnAdd').click(function() {
 
 function findByName(searchKey) {
 
-                console.log('findByName: ' + searchKey);
+                console.log('findByReference: ' + searchKey);
 
                 $.ajax({
 
@@ -31,34 +31,6 @@ function findByName(searchKey) {
 
 }
 
- 
-function findById(id) {
-
-                console.log('findById: ' + id);
-
-                $.ajax({
-
-                                type: 'GET',
-
-                                url: rootURL + '/' + id,
-
-                                dataType: "json",
-
-                                success: function(data){
-
-                                                $('#btnDelete').show();
-
-                                                console.log('findById success: ' + data.name);
-
-                                                currentApplication = data;
-
-                                                renderDetails(currentApplication);
-
-                                }
-
-                });
-
-}
  
 function addApplication() {
 
@@ -112,15 +84,5 @@ function formToJSON() {
 
                                 });
 
-                                
-
 }
 
-function redirectSuccess(resultData){
-    //window.location.href="success.html";
-    
-}
-
-function redirectFailure(){
-	window.location.href="failure.html";
-}
