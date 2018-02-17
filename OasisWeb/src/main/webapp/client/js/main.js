@@ -76,8 +76,10 @@ function addApplication() {
 
                                 data: formToJSON(),
 
-                                success: redirectSuccess(data.refNum),
-                                error: redirectFailure()
+                                success:  function(resultData){
+                                        var res= document.getElementById("ref");
+                                        res.innerHTML=resultData.refNum;
+                                }
 
                 });
 
@@ -114,8 +116,9 @@ function formToJSON() {
 
 }
 
-function redirectSuccess(){
-	window.location.href="success.jsp";
+function redirectSuccess(resultData){
+    //window.location.href="success.html";
+    
 }
 
 function redirectFailure(){
