@@ -1,131 +1,422 @@
 <!DOCTYPE html>
-<html lang="en" >
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Oasis: Apply For A Place</title>
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>Form wizard (using tabs) - Bootsnipp.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        .wizard {
+    margin: 20px auto;
+    background: #fff;
+}
 
-  
-      <link rel="stylesheet" href="../css/stylish-portfolio.css">
+    .wizard .nav-tabs {
+        position: relative;
+        margin: 40px auto;
+        margin-bottom: 0;
+        border-bottom-color: #e0e0e0;
+    }
 
-  
-</head>
+    .wizard > div.wizard-inner {
+        position: relative;
+    }
 
-<body>
+.connecting-line {
+    height: 2px;
+    background: #e0e0e0;
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+}
 
-  <form method="post" novalidate>
-  <div id="msform">
-    <!-- progressbar -->
-    <ul id="progressbar">
-      <li class="active">&nbsp;</li>
-      <li>&nbsp;</li>
-      <li>&nbsp;</li>
-      <li>&nbsp;</li>
-      <li>&nbsp;</li>
-      <li>&nbsp;</li>
-    </ul>
-    <!-- fieldsets -->
-    <fieldset>
-      <h2 class="fs-title">What Are You Looking For?</h2>
-      <h3 class="fs-subtitle">&nbsp;</h3>
-      <select name="type_of_place" id="typeOfPlace">
-        <optgroup label="Rent">
-          <option value="rent_apartment">An Apartment/Flat</option>
-          <option value="rent_house">A House</option>
-          <option value="rent_room">A Room</option>
-          </optgroup>
-      </select>
-      <p><br/><br/>How Long Are You Staying?<br/><br/><br/></p>
-      <select name="how_long" id="lengthOfStay">
-          <option value="few_days">Just A Couple Of Days</option>
-          <option value="30_days">1 Month</option>
-          <option value="6_months">6 Months</option>
-          <option value="12_months">12 Months</option>
-          <option value="year_plus">More Than A Year</option>
-      </select>
-      <input type="button" name="next" class="next action-button" value="Next" />
-    </fieldset>
-    <fieldset>
-      <h2 class="fs-title">Tell Us A Little About Yourself</h2>
-      <h3 class="fs-subtitle">Personal Details</h3>
-      <input type="text" name="firstname" id="firstName" placeholder="First Name" />
-      <input type="text" name="lastname" id="lastName" placeholder="Last Name" />
-      <input type="text" name="id" id="said" placeholder="ID/Passport" />
-      <input type="text" name="dateofbirth" id="dateOfBirth" placeholder="Date Of Birth" />
-     <select name="gender" id="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-     </select>
-    <select name="maritalstatus" id="maritalStatus">
-      <option value="single">Single</option>
-      <option value="married">Married</option>
-      <option value="divorced">Divorced</option>
-   </select>
-      <input type="text" name="cellnumber" id="cellNumber" placeholder="Cellphone Number" />
-      <input type="text" name="emailaddress" id="email" placeholder="Email Address" />
-      <input type="button" name="previous" class="previous action-button" value="Previous" />
-      <input type="button" name="next" class="next action-button" value="Next" />
-    </fieldset>
-    <fieldset>
-      <h2 class="fs-title">What Do You Do For A Living?</h2>
-      <h3 class="fs-subtitle">Employment Details</h3>
-      <input type="text" name="occupation" id="occupation" placeholder="Occupation" />
-      <input type="text" name="companyname" id="companyName" placeholder="Company Name" />
-      <textarea name="employeraddress" id="" placeholder="Employer Address"></textarea>
-      <input type="text" name="workphone" id="workPhone" placeholder="Work Phone Number" />
-      <input type="text" name="employmentperiod" id="employmentPeriod" placeholder="Period Of Employment" />
-      <input type="text" name="netincome" id="monthlyIncome" placeholder="Montly Net Income" />
-      <input type="text" name="incometaxnumber" id="incomeTaxNumber" placeholder="Income Tax Number" />
-      
-      <input type="button" name="previous" class="previous action-button" value="Previous" />
-      <input type="button" name="next" class="next action-button" value="Next" />
-    </fieldset>
-    <fieldset>
-      <h2 class="fs-title">How Would You Like Agents/Property Owners To Contact You?</h2>
-      <h3 class="fs-subtitle">Method Of Contact</h3>
-      <select name="methodofcontact" id="methodOfContact">
-          <option value="email">Email</option>
-          <option value="sms">SMS</option>
-          <option value="phone">Phone</option>
-       </select>
-      <input type="button" name="previous" class="previous action-button" value="Previous" />
-      <input type="button" name="next" class="next action-button" value="Next" />
-    </fieldset>
-    <fieldset>
-      <h2 class="fs-title">Read And Accept Our Terms And Conditions</h2>
-      <h3 class="fs-subtitle">Terms and Conditions</h3>
-      <textarea rows="10" name="terms" placeholder="Address" disabled>By clicking Apply you agree to our terms and conditions. You agree that your information will be used to perform background checks that include credit checks, employment vetting, criminal record checks, and any other checks we may deem necessary to process your application.You also agree that we are not liable for any loss, theft,damage, or injury that may result to you resulting from the use of this service.</textarea>
-      <input type="button" name="previous" class="previous action-button" value="Previous" />
-      <input type="button" name="submit" id= "btnAdd" class="next action-button" value="Apply" />
-    </fieldset>
-    <fieldset>
-      <h2 class="fs-title">We've received your application</h2>
-      <h3 class="fs-subtitle"><b>Application Results</b></h3>
-      <p>
-          Your application has been received and your reference number is: <label id="ref"></label>
-      </p>
-      <p>&nbsp;</p>
-      
-      <p>&nbsp;</p>
-      <textarea rows="10" name="results" placeholder="Application Results" disabled>
-        You can expect an agent to contact you shortly.
+.wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
+    color: #555555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+}
+
+span.round-tab {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    border-radius: 100px;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 25px;
+}
+span.round-tab i{
+    color:#555555;
+}
+.wizard li.active span.round-tab {
+    background: #fff;
+    border: 2px solid #5bc0de;
     
+}
+.wizard li.active span.round-tab i{
+    color: #5bc0de;
+}
+
+span.round-tab:hover {
+    color: #333;
+    border: 2px solid #333;
+}
+
+.wizard .nav-tabs > li {
+    width: 25%;
+}
+
+.wizard li:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 0;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: #5bc0de;
+    transition: 0.1s ease-in-out;
+}
+
+.wizard li.active:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #5bc0de;
+}
+
+.wizard .nav-tabs > li a {
+    width: 70px;
+    height: 70px;
+    margin: 20px auto;
+    border-radius: 100%;
+    padding: 0;
+}
+
+    .wizard .nav-tabs > li a:hover {
+        background: transparent;
+    }
+
+.wizard .tab-pane {
+    position: relative;
+    padding-top: 50px;
+}
+
+.wizard h3 {
+    margin-top: 0;
+}
+
+@media( max-width : 585px ) {
+
+    .wizard {
+        width: 90%;
+        height: auto !important;
+    }
+
+    span.round-tab {
+        font-size: 16px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .wizard .nav-tabs > li a {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .wizard li.active:after {
+        content: " ";
+        position: absolute;
+        left: 35%;
+    }
+}
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<section>
+        <div class="wizard">
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                1
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                2
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                               3
+                            </span>
+                        </a>
+                    </li>
+                   
         
-        Expect feedback on your application within 1 day. Normal processing takes between 1 to 3 days. 
-      </textarea>
-      <input type="button" name="homepage" id= "btnHome" onclick="window.location.href='../index.html'" class="submit action-button-results" value="Go To Main Page" />
-    </fieldset>
-  </div>
-</form>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                             4
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
+            <form role="form">
+                <div class="tab-content">
+                        <div class="tab-pane active" role="tabpanel" id="step1">
+                                <h3>What are you looking for?</h3>
+                                <div class="step1">
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="typeOfPlace">Type Of Place?</label>
+                                        <select class="form-control" name="type_of_place" id="typeOfPlace">
+                                                <optgroup label="Rent">
+                                                  <option value="rent_apartment">An Apartment/Flat</option>
+                                                  <option value="rent_house">A House</option>
+                                                  <option value="rent_room">A Room</option>
+                                                  </optgroup>
+                                              </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lengthOfStay">How Long Are You Staying?</label>
+                                        <select class="form-control" name="how_long" id="lengthOfStay">
+                                                <option value="few_days">Just A Couple Of Days</option>
+                                                <option value="30_days">1 Month</option>
+                                                <option value="6_months">6 Months</option>
+                                                <option value="12_months">12 Months</option>
+                                                <option value="year_plus">More Than A Year</option>
+                                            </select>
+                                    </div>
+                                </div>
+                              
+                                </div>
+                                <br/>
+                                <ul class="list-inline pull-right">
+                                    <li><button type="button" class="btn btn-primary next-step">Next</button></li>
+                                </ul>
+                            </div>
+                    <div class="tab-pane" role="tabpanel" id="step2">
+                        <h3>Tell Us A Little About Yourself</h3>
+                       
+                        <div class="row">
+                                <div class="col-md-6">
+                                        <label for="firstName">First Name</label>
+                                        <input class="form-control" type="text" name="firstname" id="firstName" placeholder="First Name" />
+                                </div>
+                                <div class="col-md-6">
+                                        <label for="firstName">Last Name</label>
+                                        <input class="form-control" type="text" name="lastname" id="lastName" placeholder="Last Name" />
+                                    </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-6">
+                                        <label for="firstName"> ID</label>
+                                        <input class="form-control" type="said" name="id" id="said" placeholder="ID/Passport" />
+                                </div>
+                                <div class="col-md-6">
+                                        <label for="dateOfBirth">Date Of Birth</label>
+                                        <input class="form-control" type="text" name="dateofbirth" id="dateOfBirth" placeholder="Date Of Birth" />
+                                    </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-6">
+                                        
+                                        <label for="gender"> Gender</label>
+                                        <select class="form-control" name="gender" id="gender">
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                             </select>
+                                </div>
+                                <div class="col-md-6">
+                                        <label for="maritalStatus">Marital Status</label>
+                                        <select class="form-control" name="maritalstatus" id="maritalStatus">
+                                                <option value="single">Single</option>
+                                                <option value="married">Married</option>
+                                                <option value="divorced">Divorced</option>
+                                             </select>
+                                    </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-6">
+                                        <label for="cellNumber"> Cellphone Number</label>
+                                        <input class="form-control" type="text" name="cellnumber" id="cellNumber" placeholder="Cellphone Number" />
+                                </div>
+                                <div class="col-md-6">
+                                        <label for="email">Email Address</label>
+                                        <input class="form-control" type="text" name="emailaddress" id="email" placeholder="Email Address" />
+                                    </div>
+                        </div><br/>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">Continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step3">
+                        <h3>What Do You Do For A Living?</h3>
+                        <h4 class="fs-subtitle">Employment Details</h4>
+                        <div class="row">
+                                <div class="col-md-6">
+                                        <label for="occupation">Occupation</label>
+                                        <input class="form-control" type="text" name="occupation" id="occupation" placeholder="Occupation" />
+                                </div>
+                                <div class="col-md-6">
+                                        <label for="companyName">Company Name</label>
+                                        <input class="form-control" type="text" name="companyname" id="companyName" placeholder="Company Name" />
+                                </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-6">
+                                        <label for="employeraddress">Employer Address</label>
+                                        <textarea class="form-control" name="employeraddress" id="employeraddress" placeholder="Employer Address"></textarea>
+                                </div>
+                                <div class="col-md-6">
+                                        <label for="workPhone">Work Phone Number</label>
+                                        <input class="form-control" type="text" name="workphone" id="workPhone" placeholder="Work Phone Number" />
+                                </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-6">
+                                        <label for="employmentPeriod">Period Of Employment</label>
+                                        <input class="form-control" type="text" name="employmentperiod" id="employmentPeriod" placeholder="Period Of Employment" />
+                                </div>
+                                <div class="col-md-6">
+                                        <label for="monthlyIncome">Montly Net Income</label>
+                                        <input class="form-control" type="text" name="netincome" id="monthlyIncome" placeholder="Montly Net Income" />
+                                </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-6">
+                                        <label for="incomeTaxNumber">Income Tax Number</label>
+                                        <input class="form-control" type="text" name="incometaxnumber" id="incomeTaxNumber" placeholder="Income Tax Number" />
+                                </div>
+                                <div class="col-md-6">
+                                        &nbsp;
+                                </div>
+                        </div>
+                        <h3>How Would You Like Agents/Property Owners To Contact You?</h3>
+                            <div class="row">
+                                    <div class="col-md-12">
+                                           
+                                            <label for="methodOfContact">Method Of Contact</label>
+                                            <select class="form-control" name="methodofcontact" id="methodOfContact">
+                                                <option value="email">Email</option>
+                                                <option value="sms">SMS</option>
+                                                <option value="phone">Phone</option>
+                                             </select>
+                                    </div>
+                                    
+                            </div>
 
-    <script  src="js/index.js"></script>
-    <script  src="js/main.js"></script>
-    <script src="js/jquery-1.7.1.min.js"></script>
+                            <h3>Read And Accept Our Terms And Conditions</h3>
+                               
+                                <div class="row">
+                                        <div class="col-md-12">
+                                                <label for="terms">Terms and Conditions</label>
+                                                <textarea class="form-control" rows="10" name="terms" id ="terms" placeholder="Address" disabled>By clicking Apply you agree to our terms and conditions. You agree that your information will be used to perform background checks that include credit checks, employment vetting, criminal record checks, and any other checks we may deem necessary to process your application.You also agree that we are not liable for any loss, theft,damage, or injury that may result to you resulting from the use of this service.</textarea>
+                                        </div>
+                                       
+                                </div>
+                        <br/>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            
+                            <li><button type="button" id= "btnAdd" class="btn btn-primary btn-info-full next-step">Submit Application</button></li>
+                        </ul>
+                    </div>
+               
+                    <div class="tab-pane" role="tabpanel" id="complete">
+                            <p>
+                                    Your application has been received and your reference number is: <label id="ref"></label>
+                                </p>
+                            <div class="row">
+                                    <div class="col-md-12">
+                                            <textarea class="form-control" rows="10" name="results" placeholder="Application Results" disabled>
+                                                    You can expect an agent to contact you shortly.
+                                                
+                                                    
+                                                    Expect feedback on your application within 1 day. Normal processing takes between 1 to 3 days. 
+                                                  </textarea>
+                                                  <br/>
+                                                  <input class="form-control" type="button" name="homepage" id= "btnHome" onclick="window.location.href='../index.html'" class="submit action-button-results" value="Go To Main Page" />
+                                    </div>
+                                    
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+   </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function () {
+    //Initialize tooltips
+    $('.nav-tabs > li a[title]').tooltip();
+    
+    //Wizard
+    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+
+        var $target = $(e.target);
+    
+        if ($target.parent().hasClass('disabled')) {
+            return false;
+        }
+    });
+
+    $(".next-step").click(function (e) {
+
+        var $active = $('.wizard .nav-tabs li.active');
+        $active.next().removeClass('disabled');
+        nextTab($active);
+
+    });
+    $(".prev-step").click(function (e) {
+
+        var $active = $('.wizard .nav-tabs li.active');
+        prevTab($active);
+
+    });
+});
+
+function nextTab(elem) {
+    $(elem).next().find('a[data-toggle="tab"]').click();
+}
+function prevTab(elem) {
+    $(elem).prev().find('a[data-toggle="tab"]').click();
+}
+</script>
 </body>
-
 </html>
