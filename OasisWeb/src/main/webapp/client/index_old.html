@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>Oasis: Apply For A Place</title>
+    <title>Form wizard (using tabs) - Bootsnipp.com</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="js/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
         .wizard {
     margin: 20px auto;
@@ -148,8 +148,8 @@ span.round-tab:hover {
     }
 }
     </style>
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -353,7 +353,7 @@ span.round-tab:hover {
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
                             
-                            <li><button type="button" id= "btnAdd" class="btn btn-primary btn-info-full apply">Submit Application</button></li>
+                            <li><button type="button" id= "btnAdd" class="btn btn-primary btn-info-full next-step">Submit Application</button></li>
                         </ul>
                     </div>
                
@@ -403,14 +403,6 @@ $(document).ready(function () {
         nextTab($active);
 
     });
-
-    $(".apply").click(function (e) {
-
-  var $active = $('.wizard .nav-tabs li.active');
-  $active.next().removeClass('disabled');
-  nextTab($active);
-  addApplication();
-});
     $(".prev-step").click(function (e) {
 
         var $active = $('.wizard .nav-tabs li.active');
@@ -421,62 +413,9 @@ $(document).ready(function () {
 
 function nextTab(elem) {
     $(elem).next().find('a[data-toggle="tab"]').click();
-    
 }
 function prevTab(elem) {
     $(elem).prev().find('a[data-toggle="tab"]').click();
-}
-
-function addApplication() {
-
-console.log('addApplication');
-
-$.ajax({
-
-                type: 'PUT',
-
-                contentType: 'application/json',
-
-                url: rootURL,
-
-                dataType: "json",
-
-                data: formToJSON(),
-
-                success:  function(resultData){
-                        var res= document.getElementById("ref");
-                        res.innerHTML=resultData.refNum;
-                }
-
-});
-
-}
-
-function formToJSON() {
-
-var ApplicationId = $('#ApplicationId').val();
-
-return JSON.stringify({
-                "firstName": $('#firstName').val(),
-                "lastName": $('#lastName').val(),
-                "id": $('#said').val(),
-                "gender": $('#gender').val(),
-                "dateOfBirth": $('#dateOfBirth').val(),
-                "maritalStatus": $('#maritalStatus').val(),
-                "cellNumber": $('#cellNumber').val(),
-                "email": $('#email').val(),
-                "occupation": $('#occupation').val(),
-                "companyName": $('#companyName').val(),
-                "monthlyIncome": $('#monthlyIncome').val(),
-                "employmentPeriod": $('#employmentPeriod').val(),
-                "workPhone": $('#workPhone').val(),
-                "incomeTaxNumber": $('#incomeTaxNumber').val(),
-                "methodOfContact": $('#methodOfContact').val(),
-                "typeOfPlace": $('#typeOfPlace').val() ,
-                "lengthOfStay": $('#lengthOfStay').val()
-
-                });
-
 }
 </script>
 </body>
